@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family:"Josefin Sans", sans-serif;
+    color: aliceblue;
+}
+.main_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+body{
+   background-image: linear-gradient(#1F0E40,);
+   background-image: linear-gradient(#1F0E40,#4D2498);
+}
+.nav_btns {
+    display: flex;
+    flex-direction: column;
+    background-color: #CCB1FF;
+    width: 5%;
+    height: 100vh;
+    justify-content: space-around;
+    border-radius:0px 20px 20px 0px;
+    -webkit-box-shadow: 8px -1px 33px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 8px -1px 33px -5px rgba(0,0,0,0.75);
+    box-shadow: 8px -1px 33px -5px rgba(0,0,0,0.75);
+}
+img{
+    margin:auto;
+    width: 40px;
+    height: 40px;
+}
+.blocks{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    
+}
+.home_div{
+    width: 100%;
+    height: auto;
+    display: block;
+    text-align: right;
+    margin: auto;
+    
+}
+@keyframes s{
+    from{
+        transform:translateX(80px);
+    }
+}
+@keyframes su{
+    from{
+        transform:translateY(80px);
+    }
+}
+@keyframes sl{
+    from{
+        transform:translatex(-80px);
+    }
+}
+
+.home_div h1{
+    font-size: 70px;
+    margin-top: 70px;
+    margin-right: 80px;
+}
+#welcome{
+    animation-duration:1s;
+    animation-name: s;
+}
+
+#myname{
+    animation-duration:1.5s;
+    animation-name: s;
+}  
+#iam {
+    font-size: 45px;
+   
+}
+
+#name{
+    font-style: italic;
+
+}
+
+#designation{
+    margin-right: 80px;
+    animation-duration:1.5s;
+    animation-name: s;
+   
+}
+
+.about_div{
+    margin: 100px 20%;
+    display: flex;
+
+    
+}
+.top_div{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.profile{
+    margin-top: 30px;
+    width:240px;
+    height: 280px;
+    border-radius: 10%;
+    background-image: url(cartoon1.png);
+    background-repeat:round;
+   /* -webkit-box-shadow: 0px 0px 18px 2px rgb(135, 86, 215);
+-moz-box-shadow: 0px 0px 18px 2px rgb(135, 86, 215);
+box-shadow: 0px 0px 18px 2px rgb(155, 86, 215);*/
+margin:auto;
+animation-duration:1s;
+    animation-name: sl;
+   
+
+}
+.education{
+    width: 50%;
+    height: 100%;
+    animation-duration:1s;
+    animation-name: s;
+}
+.education h1{
+    margin-bottom: 30px;
+}
+.education h2{
+    margin-bottom: 10px;
+}
+.education p{
+    margin-bottom: 25px;
+    font-style: italic;
+}
+.objective{
+   margin-top: 100px;
+   text-align: center;
+   animation-duration:1s;
+    animation-name: su;
+}
+.skills_div{
+    margin: 5% 10%;
+    width: 80%;
+}
+.item_list{
+    display: flex;
+    justify-content: space-around;
+    margin:20px 0px
+}
+.category{
+    margin:20px 10px;
+}
+.item_list img{
+    width: 70px;
+    height: 70px;
+}
+.skill{
+    margin: auto;
+    padding-bottom: 10px;
+    animation-duration: 1s;
+    animation-name: s;
+
+}
+.skill p{
+    text-align: center;
+    padding-top: 10px;
+}
+.category h1{
+    animation-duration: 1s;
+    animation-name: sl;
+}
+.proj_div{
+    margin: 5% 10%;
+
+}
+.container{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    -webkit-box-shadow: -11px 1px 20px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -11px 1px 20px 0px rgba(0,0,0,0.75);
+    box-shadow: -11px 1px 20px 0px rgba(0,0,0,0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: -50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #CCB1FF;
+    border-radius: 10%;
+   
+}
+.card:first-child {
+    margin-left: 0;
+}
+
+.card:hover {
+    transform: translate(-55px,-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10%;
+    filter:grayscale(0%);
+    border: rgb(17, 17, 17) 1px solid;
+   
+}
+
+.img-text button{
+   padding: 10px 20px;
+   color: black;
+   margin-top: 10px;
+   border-radius: 5px;
+   font-size: larger;
+   border: none;
+   transition: transform 1s;
+}
+.img-text button:hover{
+    border: #4D2498 2px solid;
+}
+.img-text {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #1F0E40;
+    font-size: 18px;
+    font-weight: bold;
+    background-color:#CCB1FF;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    height: 30%;
+    border-radius:0 0 15% 15%;
+    transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0; /* Initially hidden */
+}
+
+/* Show .img-text when hovering over the card */
+.card:hover .img-text {
+    visibility: visible;
+    opacity: 1; /* Fade in effect */
+}
+
+.cont_div{
+    margin: 10%;
+    width: 80%;
+}
+.contact-title {
+    font-size: 2em;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.contact-email {
+    font-size: 1.5em;
+    color: rgb(197, 210, 244);
+    text-decoration: none;
+    display: inline-block; /* Ensures margin-bottom applies correctly */
+    margin-bottom: 10px; /* Adjust spacing as needed */
+}
+.contact-description {
+    font-size: 0.9em;
+    color: gray;
+}
+form {
+    max-width: 500px;
+    margin: 20px auto;
+}
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+input, textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid rgb(30, 211, 235);
+    outline: none;
+    padding: 5px;
+    font-size: 1em;
+    background: transparent;
+}
+.input-group input {
+    width: 48%;
+}
+button {
+    background: transparent;
+    border: 2px solid rgb(30, 211, 235);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: transform 1s;
+}
+.social-icons {
+    margin-top: 20px;
+}
+.social-icons a {
+    margin: 0 10px;
+    font-size: 1.2em;
+}
+.cont_page{
+   text-align: center;
+   padding: 20px;
+
+   
+}
+button:hover{
+    background-color:#7547cc;
+    transform: translateY(-2px);
+    padding: 10px 22px;
+}
+.navs{
+    margin: auto;
+}
+.navs p{
+    color:black;
+
+}
+
+
