@@ -251,8 +251,14 @@ document.getElementById("contactForm").addEventListener("submit", async function
         alert("All fields are required!");
         return;
     }
+    const API_URL = window.location.hostname === "localhost"
+    ? "http://localhost:5011" // Local backend
+    : "https://portfolio-rho-self-97.vercel.app/"; 
+    console.log(API_URL);
 try{
-    const response = await fetch("http://localhost:5011/contact",
+   
+
+    const response = await fetch(`${API_URL}/contact`,
      {
         method: "POST",
         headers: { "Content-Type": "application/json" },
