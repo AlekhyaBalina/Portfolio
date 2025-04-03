@@ -8,7 +8,12 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: [
+        "https://portfolio-rho-self-97.vercel.app", // Deployed frontend
+        "http://localhost:5500" // Your local frontend (running on port 5500)
+    ]
+}));
 
 // MongoDB Connection
 mongoose
