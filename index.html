@@ -251,28 +251,37 @@ document.getElementById("contactForm").addEventListener("submit", async function
         alert("All fields are required!");
         return;
     }
-    const API_URL = window.location.hostname === "localhost"
+    // Fix the API_URL by removing the trailing slash
+const API_URL = window.location.hostname === "localhost"
     ? "http://localhost:5011" // Local backend
-    : "https://portfolio-rho-self-97.vercel.app/"; 
-    console.log(API_URL);
-try{
-   
+    : "https://portfolio-rho-self-97.vercel.app"; // Remove trailing slash
 
-    const response = await fetch(`${API_URL}/contact`,
-     {
+console.log("Using API URL:", API_URL);
+
+try {
+    const response = await fetch(`${API_URL}/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name:Name, email, message })
+        body: JSON.stringify({ name: Name, email, message })
     });
+
+    // Check if response is ok before trying to parse JSON
+    if (!response.ok) {
+        throw new Error(`Server responded with status: ${response.status}`);
+    }
 
     const result = await response.json();
     console.log("📩 Response from Server:", result);
-    alert(result.message || "Something went wrong");
-    }
-catch (error) {
-        console.error("❌ Fetch Error:", error);
-        alert("Error: Could not send data");
-    }
+    alert(result.message || "Message sent successfully!");
+    
+    // Clear form fields on success
+    document.getElementById("Name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+} catch (error) {
+    console.error("❌ Fetch Error:", error);
+    alert("Error: Could not send data. Please try again later.");
+}
 });
 
         

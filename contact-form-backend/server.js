@@ -16,11 +16,11 @@ app.use(cors({
 }));
 
 // MongoDB Connection
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB Connected Successfully!"))
-  .catch(err => console.error("DB Connection Error:", err));
-// Define a Schema
+// mongoose
+//   .connect(process.env.MONGO_URI)
+//   .then(() => console.log("MongoDB Connected Successfully!"))
+//   .catch(err => console.error("DB Connection Error:", err));
+// // Define a Schema
 const ContactSchema = new mongoose.Schema({
   name: String,
   email: String,
@@ -55,7 +55,13 @@ app.post("/contact", async (req, res) => {
 // Start Server
 const PORT = process.env.PORT || 5011;
 
-
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+connectDB()
+  .then(() => {
+    // Start server after DB connection
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  })
+  .catch(err => {
+    console.error("Could not start server due to database connection error", err);
+  });
